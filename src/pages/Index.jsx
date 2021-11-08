@@ -1,9 +1,10 @@
 import React from 'react'
+import CountriesList from '../components/CountriesList'
 
 const Index = () => {
     return (
         <div>
-            Pagina donde irán todos los paises
+            <CountriesList/>
         </div>
     )
 }

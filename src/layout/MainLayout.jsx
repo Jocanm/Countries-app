@@ -18,7 +18,7 @@ const MainLayout = ({ children }) => {
                     <span className="ml-3 font-semibold tracking-wide">Dark mode</span>
                 </p>
             </header>
-            <main className={`main ${dark ? "bg-ca-verydark main-dark" : "bg-ca-light main-light"} transition1 main-shadow pt-10`}>
+            <main className={`main ${dark ? "bg-ca-verydark main-dark" : "bg-ca-light main-light"} transition1 main-shadow pt-10 pb-10`}>
                 <section>
                     {children}
                 </section>

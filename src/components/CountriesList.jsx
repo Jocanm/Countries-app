@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import useFetch from '../hooks/useFetch';
 import CountryItem from './CountryItem';
 import { nanoid } from 'nanoid';
@@ -6,13 +6,14 @@ import { nanoid } from 'nanoid';
 const CountriesList = () => {
 
     // const {data,loading,error} = useFetch('https://restcountries.com/v3.1/all');
-    // const {data,loading,error} = useFetch('https://restcountries.com/v3.1/region/america');
-    const {data,loading,error} = useFetch('https://restcountries.com/v3.1/name/colombia');
+    const {data,loading,error} = useFetch('https://restcountries.com/v3.1/region/america');
+    // const {data,loading,error} = useFetch('https://restcountries.com/v3.1/name/colombia');
     
     useEffect(()=>{
         console.log('data: ',data,loading,error);
-        loading||console.log(data[0]);
+        loading||console.log(data);
     },[data,loading,error])
+
 
     return (
         <>
@@ -28,7 +29,7 @@ const CountriesList = () => {
 const List = ({data}) => {
 
     return(
-        <ul>
+        <ul className="grid grid-cols-1 gap-y-12 lg:grid-cols-4">
             {
                 data.map((e,i)=> (
                     <li key={nanoid()}>

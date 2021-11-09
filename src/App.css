@@ -40,3 +40,9 @@ body {
     transition-duration: 400ms;
     /* transition: box-shadow 2s; */
 }
+
+.icono{
+    position: relative;
+    top: 21px;
+    left: 25px;
+}

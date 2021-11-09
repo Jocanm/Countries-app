@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import useDarkMode from '../context/useDark';
-import useFetch from '../hooks/useFetch';
 
 const CountryItem = ({ name, population, region, capital, flags }) => {
 

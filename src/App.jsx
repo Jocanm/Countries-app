@@ -5,31 +5,35 @@ import MainLayout from './layout/MainLayout'
 import CountryInfo from './pages/CountryInfo'
 import Index from './pages/Index'
 import { UseDark } from './context/useDark';
+import { UseBusqueda } from './context/useBusqueda';
 
 const App = () => {
 
-    const [dark,setDark] = useState(false)
+    const [dark, setDark] = useState(false)
+    const [busqueda,setBusqueda] = useState("")
 
     return (
-        <UseDark.Provider value = {{dark,setDark}}>
-            <Router>
-                <Switch>
+        <UseBusqueda.Provider  value={{busqueda,setBusqueda}}>
+            <UseDark.Provider value={{ dark, setDark }}>
+                <Router>
+                    <Switch>
 
-                    <Route path={["/", "/country:countryName"]}>
+                        <Route path={["/", "/country:countryName"]}>
 
-                        <MainLayout>
-                            <Switch>
-                                <Route path="/country/:countryName" component={CountryInfo} />
-                                <Route path="/" component={Index} />
-                                <Redirect to="/" />
-                            </Switch>
-                        </MainLayout>
+                            <MainLayout>
+                                <Switch>
+                                    <Route path="/country/:countryName" component={CountryInfo} />
+                                    <Route path="/" component={Index} />
+                                    <Redirect to="/" />
+                                </Switch>
+                            </MainLayout>
 
-                    </Route>
+                        </Route>
 
-                </Switch>
-            </Router>
-        </UseDark.Provider>
+                    </Switch>
+                </Router>
+            </UseDark.Provider>
+        </UseBusqueda.Provider>
     )
 }
 

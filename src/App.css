@@ -37,6 +37,6 @@ body {
 .transition1 {
     transition-property: background-color, box-shadow, border-color, color, fill, stroke;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 300ms;
+    transition-duration: 400ms;
     /* transition: box-shadow 2s; */
 }

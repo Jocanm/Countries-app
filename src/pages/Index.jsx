@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CountriesList from '../components/CountriesList'
-import useDarkMode from '../context/useDark'
+import { UseRegion } from '../context/useBusquedaRegion'
 
 const Index = () => {
 
-    const {dark} = useDarkMode()
+    const [region,setRegion] = useState("")
 
     return (
         <div>
-            <CountriesList/>
+            <UseRegion.Provider value={{region,setRegion}}>
+                <CountriesList />
+            </UseRegion.Provider>
         </div>
     )
 }

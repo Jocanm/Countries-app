@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router';
+// import { useCountry } from '../context/useCountry';
 import useDarkMode from '../context/useDark';
 
-const CountryItem = ({ name, population, region, capital, flags }) => {
+const CountryItem = ({ name, population, region, capital, flags}) => {
 
+    const history = useHistory()
+    // const {country,setCountry} = useCountry()
     const [cap,setCap] = useState("")
     const { dark } = useDarkMode()
     const { common } = name;
@@ -20,8 +24,17 @@ const CountryItem = ({ name, population, region, capital, flags }) => {
         dark?setStyles("bg-ca-dark"):setStyles("bg-ca-light")
     },[dark])
 
+    const handleInfo = () => {
+        // setCountry(common)
+        // console.log(country)
+        history.push(`/country/${common}`)
+    }
+
     return (
-        <div className={`card mx-auto rounded-lg lg:h-auto shadow-xl transition1 ${styles}`}>
+        <div 
+        className={`card mx-auto rounded-lg lg:h-auto shadow-xl transition1 ${styles} cursor-pointer`}
+        onClick={handleInfo}
+        >
             <img 
             src={png} 
             alt={common} 

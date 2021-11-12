@@ -29,7 +29,7 @@ const CountriesList = () => {
     )
 }
 
-const List = React.memo(({ data }) => {
+const List = ({ data }) => {
 
     const { busqueda, setBusqueda } = useBusquedas()
     const { region } = useRegion()
@@ -50,7 +50,7 @@ const List = React.memo(({ data }) => {
     }, [region, data])
 
     useEffect(() => {
-        if(busqueda===">>>>"){
+        if (busqueda === ">>>>") {
 
         }
         else if (busqueda) {
@@ -76,6 +76,6 @@ const List = React.memo(({ data }) => {
             }
         </ul>
     )
-})
+}
 
 export default CountriesList

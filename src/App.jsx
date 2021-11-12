@@ -6,34 +6,38 @@ import CountryInfo from './pages/CountryInfo'
 import Index from './pages/Index'
 import { UseDark } from './context/useDark';
 import { UseBusqueda } from './context/useBusqueda';
+import { UseCountry } from './context/useCountry';
 
 const App = () => {
 
     const [dark, setDark] = useState(false)
-    const [busqueda,setBusqueda] = useState("")
+    const [busqueda, setBusqueda] = useState("")
+    const [country, setCountry] = useState("")
 
     return (
-        <UseBusqueda.Provider  value={{busqueda,setBusqueda}}>
-            <UseDark.Provider value={{ dark, setDark }}>
-                <Router>
-                    <Switch>
+        <UseCountry.Provider value={{country,setCountry}}>
+            <UseBusqueda.Provider value={{ busqueda, setBusqueda }}>
+                <UseDark.Provider value={{ dark, setDark }}>
+                    <Router>
+                        <Switch>
 
-                        <Route path={["/", "/country:countryName"]}>
+                            <Route path={["/", "/country:countryName"]}>
 
-                            <MainLayout>
-                                <Switch>
-                                    <Route path="/country/:countryName" component={CountryInfo} />
-                                    <Route path="/" component={Index} />
-                                    <Redirect to="/" />
-                                </Switch>
-                            </MainLayout>
+                                <MainLayout>
+                                    <Switch>
+                                        <Route path="/country/:countryName" component={CountryInfo} />
+                                        <Route path="/" component={Index} />
+                                        <Redirect to="/" />
+                                    </Switch>
+                                </MainLayout>
 
-                        </Route>
+                            </Route>
 
-                    </Switch>
-                </Router>
-            </UseDark.Provider>
-        </UseBusqueda.Provider>
+                        </Switch>
+                    </Router>
+                </UseDark.Provider>
+            </UseBusqueda.Provider>
+        </UseCountry.Provider>
     )
 }
 

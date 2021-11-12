@@ -46,3 +46,13 @@ body {
     top: 21px;
     left: 25px;
 }
+
+.select-1{
+    height: 56px;
+}
+
+@media (min-width: 1023px) {
+    .input-1{
+        right: 430px;
+    }
+}

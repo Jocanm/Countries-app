@@ -11,7 +11,7 @@ import { UseMainData } from './context/useMainData';
 
 const App = () => {
 
-    const [dark, setDark] = useState(false)
+    const [dark, setDark] = useState(true)
     const [busqueda, setBusqueda] = useState("")
     const [country, setCountry] = useState("")
     const [mainData, setMainData] = useState([])

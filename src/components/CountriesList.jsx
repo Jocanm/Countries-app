@@ -11,7 +11,7 @@ import { useData } from '../context/useMainData';
 
 const CountriesList = () => {
 
-    const {mainData,setMainData} = useData()
+    const {setMainData} = useData()
     const { dark } = useDarkMode()
     const { data, loading } = useFetch('https://restcountries.com/v3.1/all');
     // const { data, loading, error } = useFetch('https://restcountries.com/v3.1/region/america');
@@ -20,10 +20,6 @@ const CountriesList = () => {
     useEffect(()=>{
         loading||setMainData(data)
     },[data,loading])
-
-    useEffect(()=>{
-        console.log(mainData);
-    },[mainData])
 
     return (
         <div>

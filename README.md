@@ -22,7 +22,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://your-solution-url.com)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-challenge-hub-nS8mbu1co)
 - Live Site URL: [Countries-app](https://countries-app-tau.vercel.app/)
 
 ### Built with
